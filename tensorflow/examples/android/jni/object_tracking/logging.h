@@ -16,7 +16,18 @@ limitations under the License.
 #ifndef THIRD_PARTY_TENSORFLOW_EXAMPLES_ANDROID_JNI_OBJECT_TRACKING_LOG_STREAMING_H_
 #define THIRD_PARTY_TENSORFLOW_EXAMPLES_ANDROID_JNI_OBJECT_TRACKING_LOG_STREAMING_H_
 
+#ifdef __ANDROID__
 #include <android/log.h>
+#else
+#define ANDROID_LOG_INFO 1
+#define ANDROID_LOG_DEBUG 2
+#define ANDROID_LOG_VERBOSE 3
+#define ANDROID_LOG_ERROR 4
+#define ANDROID_LOG_WTF 5
+#define ANDROID_LOG_WARN 5
+#define ANDROID_LOG_FATAL 5
+#endif /*__ANDROID__*/
+
 #include <string.h>
 #include <ostream>
 #include <sstream>

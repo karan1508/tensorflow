@@ -17,7 +17,12 @@ limitations under the License.
 
 #ifdef STANDALONE_DEMO_LIB
 
+#ifdef __ANDROID__
 #include <android/log.h>
+#else /*__ANDROID__*/
+#define __android_log_write(...)
+#endif /*__ANDROID__*/
+
 #include <stdlib.h>
 #include <time.h>
 #include <iostream>
